@@ -30,6 +30,7 @@ public class StringAccumulator {
 			return 0;//return 0 sum in case of null or empty string
 		}
 		String delim=",";
+		str=str.replaceAll("\\\\n", "\n");//replace by actual new line when entered from command line
 		if(StringUtils.contains(str, "\n")) {
 			String firstLine=str.split("\n")[0];
 			if(StringUtils.isNumeric(firstLine)) {//check if first line is delimeter or actual number
