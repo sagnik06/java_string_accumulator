@@ -1,4 +1,4 @@
-package com.sagnik.stringaccumulator;
+package com.sagnik.javaexercise;
 
 import java.util.Arrays;
 import java.util.List;

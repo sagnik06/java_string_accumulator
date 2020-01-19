@@ -1,8 +1,6 @@
-package com.sagnik.stringaccumulator;
+package com.sagnik.javaexercise;
 
 import org.junit.Test;
-
-import com.sagnik.stringaccumulator.StringAccumulator;
 
 public class StringAccumulatorTest {
 	
