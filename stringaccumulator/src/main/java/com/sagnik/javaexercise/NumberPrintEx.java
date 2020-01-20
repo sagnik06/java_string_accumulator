@@ -11,6 +11,7 @@ package com.sagnik.javaexercise;
  import java.net.HttpURLConnection;
  import java.net.URL;
  import java.util.stream.Collectors;
+ import java.util.stream.IntStream;
 
 public class NumberPrintEx {
 
@@ -29,13 +30,16 @@ public class NumberPrintEx {
 			System.out.print(" "+pq.peek() + " " +pq.poll());
 			System.out.println(" "+pq.poll() + " " +pq.poll());
 			System.out.println("*******************************************************");
-
 			getDataFromRestAPI();
 			System.out.println("**************************************************");
 			System.out.println("Permutations for 1 letter words made up of vowels:"+countVowelPermutation(1));
 			System.out.println("Permutations for 2 letter words made up of vowels:"+countVowelPermutation(2));
 			System.out.println("Permutations for 3 letter words made up of vowels:"+countVowelPermutation(3));
 			System.out.println("Permutations for 4 letter words made up of vowels:"+countVowelPermutation(4));
+            System.out.println("**************************************************");
+            System.out.println("Is 29 a prime no?:"+isPrime(29));
+            System.out.println("Is 887 a prime no?:"+isPrime(887));
+            System.out.println("Is 901 a prime no?:"+isPrime(901));
 		}catch(Exception ex) {
 			System.err.println("Exception while printing numbers:"+ex.getMessage());
 		}
@@ -145,5 +149,12 @@ public class NumberPrintEx {
 
 		return (int)result;
 	}
+
+    //Java 8 way to check if the number is prime or not
+    private static boolean isPrime(int number) {
+        return number > 1 && IntStream
+                .range(2, number)
+                .noneMatch(i -> number % i == 0);
+    }
 
 }
